@@ -22,9 +22,9 @@ function Credentials() {
       <section id="CredentialList">
         {charList.map((credential) => (
           <div key={credential.id} >
-            {credential.name}
-            {credential.user}
-            {credential.password}
+            {"Name: " + credential.name}
+            {" || Username: " + credential.user}
+            {" || Password: " + credential.password}
           </div>
         ))}
       </section>
