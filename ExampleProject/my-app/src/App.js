@@ -6,6 +6,7 @@ import Characters from "./components/Characters";
 import Character from "./components/Character";
 import Planets from "./components/Planets";
 import Films from "./components/Films";
+import Credentials from "./components/Credentials"
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Characters />} />
           <Route path="/films/:id" element={<Films />} />
           <Route path="/planets/:id" element={<Planets />} />
+          <Route path="/credentials" element = {<Credentials />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -43,6 +43,17 @@ module.exports.findAllFilms = async function (callback) {
   });
 };
 
+module.exports.findAllCredentials = async function (callback) {
+  var col = dbPool.collection("uber-admin-access-credentials");
+  col.find().toArray(async(err, credentials) => {
+    if (!err) {
+      callback(null, credentials);
+    } else {
+      callback("Failed to find credentials, try using User:Admin Password:Admin", undefined);
+    }
+  });
+};
+
 // retrieve single character
 module.exports.findCharacter = async function (id, callback) {
   var col = dbPool.collection("characters");

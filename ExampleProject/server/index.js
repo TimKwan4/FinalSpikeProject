@@ -37,6 +37,17 @@ app.get("/api/films", (req, res) => {
   });
 });
 
+app.get("/api/credentials", (req, res) => {
+  dao.findAllCredentials((err, credentials) => {
+    if (credentials) {
+      res.send(credentials);
+    } else {
+      res.statusCode = 404;
+      res.end();
+    }
+  });
+});
+
 app.get("/api/characters/:id", (req, res) => {
   dao.findCharacter(req.params.id, (err, character) => {
     if (character) {
